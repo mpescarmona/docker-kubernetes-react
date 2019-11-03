@@ -9,7 +9,7 @@ script:
   - docker run -e CI=true mpescarmona/docker-kubernetes-react npm run test
 
 deploy:
-  provider: elasticbeanstaclk
+  provider: elasticbeanstalk
   region: "us-east-2"
   app: "docker-kubernetes-react"
   env: "DockerKubernetesReact-env"

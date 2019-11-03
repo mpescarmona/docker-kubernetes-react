@@ -7,3 +7,16 @@ before_install:
 
 script:
   - docker run -e CI=true mpescarmona/docker-kubernetes-react npm run test
+
+deploy:
+  provider: elasticbeanstaclk
+  region: "us-east-2"
+  app: "docker-kubernetes-react"
+  env: "DockerKubernetesReact-env"
+  bucket_name: "elasticbeanstalk-us-east-2-751720965724"
+  bucket_path: "docker-kubernetes-react"
+  on:
+    branch: "master"
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key: 
+    secure: "$AWS_SECRET_KEY"

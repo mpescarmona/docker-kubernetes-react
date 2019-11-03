@@ -6,4 +6,4 @@ before_install:
   - docker build -t mpescarmona/docker-kubernetes-react -f Dockerfile.dev .
 
 script:
-  - docker run mpescarmona/docker-kubernetes-react npm run test -- --coverage
+  - docker run -e CI=true mpescarmona/docker-kubernetes-react npm run test
